@@ -1,6 +1,6 @@
 # Calculator
 
-![Calculator App](calculator.png)
+![Calculator App](GUI_Calculator.png)
 
 ---
 
