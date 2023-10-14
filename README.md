@@ -1,12 +1,10 @@
-# Calculator
+# Calculator App
 
 ![Calculator App](GUI_Calculator.png)
 
 ---
 
-## Create Standalone Executable
+## Installation and Execution
 
-```shell
-pip install pyinstaller
-pyinstaller --onefile -w calc.py
-```
+- git clone `https://github.com/Mayank9001/GUI_Calculator.git`
+- Run `calc.py` file
