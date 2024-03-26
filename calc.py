@@ -5,9 +5,9 @@ SMALL_FONT_STYLE = ("Arial", 16)
 DIGITS_FONT_STYLE = ("Arial", 24, "bold")
 DEFAULT_FONT_STYLE = ("Arial", 20)
 
-OFF_WHITE = "#F8FAFF"
+OFF_WHITE = "#eef0f7"
 WHITE = "#FFFFFF"
-LIGHT_BLUE = "#CCEDFF"
+LIGHT_BLUE = "#b3e4ff"
 LIGHT_GRAY = "#F5F5F5"
 LABEL_COLOR = "#25265E"
 
@@ -46,10 +46,12 @@ class Calculator:
     def bind_keys(self):
         self.window.bind("<Return>", lambda event: self.evaluate())
         for key in self.digits:
-            self.window.bind(str(key), lambda event, digit=key: self.add_to_expression(digit))
+            self.window.bind(str(key), lambda event,
+                             digit=key: self.add_to_expression(digit))
 
         for key in self.operations:
-            self.window.bind(key, lambda event, operator=key: self.append_operator(operator))
+            self.window.bind(key, lambda event,
+                             operator=key: self.append_operator(operator))
 
     def create_special_buttons(self):
         self.create_clear_button()
@@ -81,7 +83,8 @@ class Calculator:
         for digit, grid_value in self.digits.items():
             button = tk.Button(self.buttons_frame, text=str(digit), bg=WHITE, fg=LABEL_COLOR, font=DIGITS_FONT_STYLE,
                                borderwidth=0, command=lambda x=digit: self.add_to_expression(x))
-            button.grid(row=grid_value[0], column=grid_value[1], sticky=tk.NSEW)
+            button.grid(row=grid_value[0],
+                        column=grid_value[1], sticky=tk.NSEW)
 
     def append_operator(self, operator):
         self.current_expression += operator
